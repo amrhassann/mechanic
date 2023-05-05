@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter_named/font_awesome_flutter_named.dart';
 import 'package:get/get.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/core/constants.dart';
+import 'package:mechanic/data/data_sources/auth_remote_data_source.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
+import 'package:mechanic/features/auth/view/login_screen.dart';
 import 'package:mechanic/features/home/widgets/drawer_tile.dart';
 import 'package:mechanic/features/near_workshop/near_workshops_screen.dart';
 import 'package:mechanic/features/profile/view/profile_screen.dart';
@@ -80,7 +82,14 @@ class HomeDrawer extends StatelessWidget {
             title: 'تسجيل الخروج',
             icon: const Icon(Icons.logout),
             onTap: () {
-              //todo
+              BaseAuthRemoteDataSource source = AuthRemoteDataSource();
+              source.logout().then((value) {
+                Get.offAll(
+                  () => LoginScreen(),
+                  transition: kTransition1,
+                  duration: kTransitionDuration,
+                );
+              });
             },
           ),
           const SizedBox(height: 40),

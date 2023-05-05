@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hive/hive.dart';
+import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/core/enums.dart';
 import 'package:mechanic/core/networking/request_result.dart';
 
@@ -12,6 +14,8 @@ abstract class BaseAuthRemoteDataSource {
     required String email,
     required String pass,
   });
+
+  Future<void> logout();
 }
 
 class AuthRemoteDataSource implements BaseAuthRemoteDataSource {
@@ -59,5 +63,15 @@ class AuthRemoteDataSource implements BaseAuthRemoteDataSource {
         errorMessage: e.message,
       );
     }
+  }
+
+  @override
+  Future<void> logout() async {
+// sign out user from Firebase Auth
+    await FirebaseAuth.instance.signOut();
+
+    // delete user from Hive box
+    final userBox = await Hive.openBox(kUserTokenHiveBox);
+    await userBox.delete(kUserTokenHiveBox);
   }
 }
