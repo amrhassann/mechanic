@@ -45,5 +45,11 @@ class HiveHelper {
     }
   }
 
-  /// [getUserToken]
+  ///[logoutUser]
+  /// delete user from box
+  static logoutUser()async{
+    final userBox = await Hive.openBox(kUserTokenHiveBox);
+    await userBox.delete(kUserTokenHiveBox);
+  }
+
 }

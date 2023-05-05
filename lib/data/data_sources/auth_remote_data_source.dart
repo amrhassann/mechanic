@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hive/hive.dart';
-import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/core/enums.dart';
 import 'package:mechanic/core/networking/request_result.dart';
+import 'package:mechanic/data/data_sources/hive_helper.dart';
 
 abstract class BaseAuthRemoteDataSource {
   Future<RequestResult<UserCredential>> signUp({
@@ -71,7 +70,6 @@ class AuthRemoteDataSource implements BaseAuthRemoteDataSource {
     await FirebaseAuth.instance.signOut();
 
     // delete user from Hive box
-    final userBox = await Hive.openBox(kUserTokenHiveBox);
-    await userBox.delete(kUserTokenHiveBox);
+    HiveHelper.logoutUser();
   }
 }
