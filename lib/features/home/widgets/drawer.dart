@@ -6,6 +6,7 @@ import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/data/data_sources/auth_remote_data_source.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
 import 'package:mechanic/features/auth/view/login_screen.dart';
+import 'package:mechanic/features/emergency/emergency_numbers_list.dart';
 import 'package:mechanic/features/home/widgets/drawer_tile.dart';
 import 'package:mechanic/features/near_workshop/near_workshops_screen.dart';
 import 'package:mechanic/features/profile/view/profile_screen.dart';
@@ -59,7 +60,7 @@ class HomeDrawer extends StatelessWidget {
             icon: const Icon(Icons.emergency),
             onTap: () {
               Get.to(
-                () => const NearWorkShopScreen(),
+                () =>  EmergencyNumbersScreen(),
                 transition: kTransition1,
                 duration: kTransitionDuration,
               );

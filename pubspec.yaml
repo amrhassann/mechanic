@@ -25,6 +25,7 @@ dependencies:
   hive_flutter: ^1.1.0
   firebase_auth: ^4.5.0
   font_awesome_flutter_named: ^1.1.2+1
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
