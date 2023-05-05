@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 
 snackBarError(String error) {
   Get.snackbar(

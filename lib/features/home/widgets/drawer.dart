@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter_named/font_awesome_flutter_named.dart';
 import 'package:get/get.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
 import 'package:mechanic/features/home/widgets/drawer_tile.dart';
@@ -76,6 +76,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           const Spacer(),
           DrawerTile(
+            titleFontWeight: null,
             title: 'تسجيل الخروج',
             icon: const Icon(Icons.logout),
             onTap: () {

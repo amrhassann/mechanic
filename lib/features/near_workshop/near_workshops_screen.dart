@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/features/near_workshop/widgets/near_workshop_button.dart';
 
 class NearWorkShopScreen extends StatelessWidget {

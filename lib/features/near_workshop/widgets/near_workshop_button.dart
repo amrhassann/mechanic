@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:maps_launcher/maps_launcher.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 
 class NearWorkShopButton extends StatelessWidget {
   const NearWorkShopButton({Key? key, required this.query, required this.title})

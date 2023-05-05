@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/features/car_status/controller/car_status_controller.dart';
 import 'package:mechanic/widgets/default_button.dart';
 import 'package:mechanic/widgets/text_field.dart';

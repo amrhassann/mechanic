@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/features/auth/controller/login_controller.dart';
 import 'package:mechanic/features/auth/view/create_account.dart';

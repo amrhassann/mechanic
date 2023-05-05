@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic/core/colors_manager.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
 import 'package:mechanic/widgets/animated_column.dart';
 
