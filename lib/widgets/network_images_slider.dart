@@ -33,7 +33,7 @@ class _NetworkImagesSliderState extends State<NetworkImagesSlider> {
             options: CarouselOptions(
               height: double.infinity,
               viewportFraction: 1.0,
-              autoPlay: true,
+              autoPlay: false,
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentImageIndex = index;
