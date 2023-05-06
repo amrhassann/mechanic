@@ -26,6 +26,9 @@ dependencies:
   firebase_auth: ^4.5.0
   font_awesome_flutter_named: ^1.1.2+1
   url_launcher: ^6.1.10
+  cloud_firestore: ^4.6.0
+  carousel_slider: ^4.2.1
+  google_sign_in: ^6.1.0
 
 dev_dependencies:
   flutter_test:
