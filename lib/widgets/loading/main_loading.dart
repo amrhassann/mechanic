@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
 
-class ButtonLoading extends StatelessWidget {
-  const ButtonLoading({Key? key}) : super(key: key);
+class MainLoading extends StatelessWidget {
+  const MainLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
