@@ -127,8 +127,8 @@ class MeterWidgetState extends State<MeterWidget> {
                       color: getKimColor(),
                       boxShadow: [
                         BoxShadow(
-                            color: widget.meterColor,
-                            blurRadius: 0,
+                            color: getKimColor(),
+                            blurRadius: .1,
                             spreadRadius: 1.0)
                       ],
                       shape: BoxShape.circle,
@@ -154,6 +154,7 @@ class MeterWidgetState extends State<MeterWidget> {
                   alignment: Alignment.bottomCenter,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         widget.currentValue.toString(),
