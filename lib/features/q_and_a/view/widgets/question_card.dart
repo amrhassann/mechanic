@@ -23,6 +23,7 @@ class QuestionCard extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
+          color: Colors.white.withOpacity(.5),
           border: Border.all(width: .3),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(25),
@@ -30,7 +31,7 @@ class QuestionCard extends StatelessWidget {
             bottomLeft: Radius.circular(25),
           ),
         ),
-        child: Text(question.q,style: const TextStyle(fontSize: 16),),
+        child: Text(question.q,style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
 
       ),
     );
