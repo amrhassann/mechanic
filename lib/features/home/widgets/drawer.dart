@@ -10,6 +10,7 @@ import 'package:mechanic/features/emergency/emergency_numbers_list.dart';
 import 'package:mechanic/features/home/widgets/drawer_tile.dart';
 import 'package:mechanic/features/near_workshop/near_workshops_screen.dart';
 import 'package:mechanic/features/profile/view/profile_screen.dart';
+import 'package:mechanic/features/q_and_a/view/questions_screen.dart';
 
 class HomeDrawer extends StatelessWidget {
   final UserModel user;
@@ -71,7 +72,7 @@ class HomeDrawer extends StatelessWidget {
             icon: const Icon(Icons.question_answer),
             onTap: () {
               Get.to(
-                () => const NearWorkShopScreen(),
+                () => const QuestionsScreen(),
                 transition: kTransition1,
                 duration: kTransitionDuration,
               );
