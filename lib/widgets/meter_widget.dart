@@ -177,7 +177,7 @@ class MeterWidgetState extends State<MeterWidget> {
   }
 
   Color getKimColor() {
-    if(widget.currentValue < widget.warningValue){
+    if(widget.currentValue <= widget.warningValue){
       return widget.meterColor;
     }else{
       return widget.warningColor;
