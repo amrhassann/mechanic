@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/core/manager/lottie_manager.dart';
-import 'package:mechanic/features/near_workshop/near_workshops_screen.dart';
+import 'package:mechanic/features/cars/view/create_car_screen.dart';
 
 class HomeNoCars extends StatelessWidget {
   const HomeNoCars({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class HomeNoCars extends StatelessWidget {
     return InkWell(
       onTap: () {
         Get.to(
-          () => const NearWorkShopScreen(),
+          () => const CreateCar(),
           transition: kTransition1,
           duration: kTransitionDuration,
         );
