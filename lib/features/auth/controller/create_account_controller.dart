@@ -45,7 +45,7 @@ class CreateAccountController extends GetxController {
   Future signUp() async {
     changeLoadingValue();
     final result = await _remoteDataSource.signUp(
-      email: emailController.text,
+      email: emailController.text.trim(),
       pass: passwordController.text,
     );
     if (result.requestState == RequestState.success) {

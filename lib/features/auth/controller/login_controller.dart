@@ -42,7 +42,7 @@ class LoginController extends GetxController {
   Future login() async {
     changeLoadingValue();
     final result = await _remoteDataSource.login(
-      email: emailController.text,
+      email: emailController.text.trim(),
       pass: passwordController.text,
     );
     if (result.requestState == RequestState.success) {
