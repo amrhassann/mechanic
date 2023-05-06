@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                           duration: kTransitionDuration,
                         );
                       },
-                      child: const Text('إنشاء حساب جديد'),
+                      child: const Text('إنشاء حساب جديد',style: TextStyle(color: ColorsManager.primary),),
                     ),
                   ],
                 ),
