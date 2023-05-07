@@ -27,7 +27,9 @@ class GetCarsController extends GetxController{
     }else{
       changeLoadingValue();
       Get.back();
-      snackBarError(result.errorMessage??"Error");
+      if (result.errorMessage != "No cars found for user") {
+        snackBarError(result.errorMessage??"Error");
+      }
     }
   }
 
