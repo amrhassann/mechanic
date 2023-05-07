@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:mechanic/core/constants.dart';
-import 'package:mechanic/data/models/car_status.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
 import 'package:mechanic/features/auth/view/login_screen.dart';
 
@@ -9,7 +8,6 @@ class HiveHelper {
   ///[hiveInit]
   static hiveInit() async {
     await Hive.initFlutter();
-    Hive.registerAdapter(CarStatusAdapter());
     Hive.registerAdapter(UserModelAdapter());
     await Hive.openBox(kCarStatusHiveBox);
     await Hive.openBox(kUserTokenHiveBox);
