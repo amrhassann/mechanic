@@ -24,13 +24,14 @@ class CarItemCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               Expanded(
                 child: IconButton(
                   onPressed: () {
-                    refreshCarDataDialog(context,car);
+                    refreshCarDataDialog(context, car);
                   },
                   icon: const Icon(
                     Icons.refresh,
@@ -48,6 +49,10 @@ class CarItemCard extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          Text(
+            "اخر قراءة للعداد ${car.kilometers} كـم",
+            style: const TextStyle(color: Colors.grey),
           ),
           const SizedBox(height: 5),
           Row(
@@ -67,7 +72,8 @@ class CarItemCard extends StatelessWidget {
                     meterColor: Colors.redAccent,
                     displayText: 'كـم',
                   ),
-                  Text(car.oilKilometers,
+                  Text(
+                    car.oilKilometers,
                     style: getStyleBasedOnValue(car.oilKilometers),
                   ),
                 ],
@@ -85,7 +91,8 @@ class CarItemCard extends StatelessWidget {
                     meterColor: Colors.redAccent,
                     displayText: 'كـم',
                   ),
-                  Text(car.checkKilometers,
+                  Text(
+                    car.checkKilometers,
                     style: getStyleBasedOnValue(car.checkKilometers),
                   ),
                 ],
