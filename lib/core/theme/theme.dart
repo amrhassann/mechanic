@@ -4,6 +4,11 @@ import 'package:mechanic/core/manager/colors_manager.dart';
 ThemeData appTheme(BuildContext context){
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(ColorsManager.primary)
+      )
+    ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(

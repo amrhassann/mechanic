@@ -7,7 +7,7 @@ import 'package:mechanic/data/models/car_model/car_model.dart';
 class GetCarsController extends GetxController{
 
   final BaseCareDataSource _source = CarDataSource();
-  bool loading= true;
+  bool loading= false;
 
   changeLoadingValue(){
     loading = !loading;
@@ -19,6 +19,7 @@ class GetCarsController extends GetxController{
 
 
   Future<void> getCars() async{
+    changeLoadingValue();
     final result = await _source.getUserCars();
     if(result.requestState == RequestState.success){
       changeLoadingValue();

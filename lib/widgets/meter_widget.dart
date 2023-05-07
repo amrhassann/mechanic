@@ -156,10 +156,10 @@ class MeterWidgetState extends State<MeterWidget> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        widget.currentValue.toString(),
-                        style: widget.displayNumericStyle,
-                      ),
+                      // Text(
+                      //   widget.currentValue.toString(),
+                      //   style: widget.displayNumericStyle,
+                      // ),
                       Text(
                         widget.displayText,
                         style: widget.displayTextStyle,
