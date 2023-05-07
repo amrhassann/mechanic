@@ -15,7 +15,7 @@ class QuestionCard extends StatelessWidget {
       onTap: () {
         Get.to(
               () => AnswerDetailsScreen(question: question),
-          transition: kTransition2,
+          transition: kTransition1,
           duration: kTransitionDuration,
         );
       },
