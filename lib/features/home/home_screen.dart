@@ -48,7 +48,7 @@ class _CreateCarButton extends StatelessWidget {
         elevation: 1,
         onPressed: () {
           Get.to(
-                () => const CreateCar(),
+                () =>  CreateCarScreen(),
             transition: kTransition1,
             duration: kTransitionDuration,
           );

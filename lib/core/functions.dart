@@ -11,6 +11,14 @@ snackBarError(String error) {
     colorText: ColorsManager.errorText,
   );
 }
+snackBarSuccess(String error) {
+  Get.snackbar(
+    '',
+    error,
+    backgroundColor: ColorsManager.white,
+    colorText: ColorsManager.primary,
+  );
+}
 
 getNameFromEmail(String email) {
   return email.split('@').first;

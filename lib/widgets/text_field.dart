@@ -27,6 +27,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onSubmit,
     this.hintStyle,
     this.textInputAction,
+    this.textDirection = TextDirection.ltr,
   }) : super(key: key);
 
   final String? hintText;
@@ -52,6 +53,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool autoFocus;
   final TextInputAction? textInputAction;
   EdgeInsets? contentPadding;
+  TextDirection? textDirection;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -101,7 +103,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ),
           ],
           TextFormField(
-            textDirection: TextDirection.ltr,
+            textDirection: widget.textDirection,
             autofocus: widget.autoFocus,
             controller: widget.controller,
             obscureText: isVisible,

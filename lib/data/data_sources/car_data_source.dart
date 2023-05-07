@@ -10,6 +10,7 @@ import 'package:mechanic/data/models/user_model/user_model.dart';
 abstract class BaseCareDataSource {
   Future<RequestResult<List<CarModel>>> getUserCars();
   Future<RequestResult<void>> updateCar(CarModel car);
+  Future<RequestResult<void>> createCar(CarModel car);
 }
 
 class CarDataSource implements BaseCareDataSource {
@@ -72,5 +73,30 @@ class CarDataSource implements BaseCareDataSource {
       );
     }
   }
+
+
+  @override
+  Future<RequestResult<void>> createCar(CarModel car) async {
+    try {
+      final email = user().email;
+      final carRef = FirebaseFirestore.instance
+          .collection('users')
+          .doc(email)
+          .collection('cars')
+          .doc();
+      await carRef.set(car.toJson());
+
+      return RequestResult(
+        requestState: RequestState.success,
+      );
+    } catch (e) {
+      log('Error creating car: $e');
+      return RequestResult(
+        requestState: RequestState.failed,
+        errorMessage: e.toString(),
+      );
+    }
+  }
+
 
 }
