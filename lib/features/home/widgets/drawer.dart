@@ -32,6 +32,7 @@ class HomeDrawer extends StatelessWidget {
             ),
             arrowColor: ColorsManager.primary,
             onDetailsPressed: () {
+              Get.back();
               Get.to(
                 () => ProfileScreen(user: user),
                 transition: kTransition1,
