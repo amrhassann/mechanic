@@ -27,13 +27,13 @@ class RefreshCarController extends GetxController {
   }
 
   int getOilKilometers(CarModel car, int newKilometers) {
-    final int done = int.parse(car.kilometers) - newKilometers;
-    return 10000 - done;
+    final int done =   newKilometers-int.parse(car.kilometers);
+    return int.parse(car.oilKilometers) - done;
   }
 
   int getCheckKilometers(CarModel car, int newKilometers) {
-    final int done = int.parse(car.kilometers) - newKilometers;
-    return 50000 - done;
+    final int done =   newKilometers-int.parse(car.kilometers);
+    return int.parse(car.checkKilometers) - done;
   }
 
   Future refreshCar(CarModel car, String newValue)async {
