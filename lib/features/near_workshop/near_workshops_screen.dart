@@ -26,23 +26,23 @@ class NearWorkShopScreen extends StatelessWidget {
         children: const <Widget>[
           NearWorkShopButton(
             title: 'ميكانيكي',
-            query: "اقرب ميكانيكي سيارات",
+            query: "ميكانيكي سيارات",
           ),
           NearWorkShopButton(
             title: 'عفشه',
-            query: "اقرب ورشة عفشه",
+            query: "ورشة عفشه",
           ),
           NearWorkShopButton(
             title: 'كهربائي',
-            query: "اقرب كهربائي سيارات",
+            query: "كهربائي سيارات",
           ),
           NearWorkShopButton(
             title: 'كاوتش',
-            query: "اقرب ورشة كاوتش سيارات",
+            query: "ورشة كاوتش سيارات",
           ),
           NearWorkShopButton(
             title: 'تغيير زيت',
-            query: "اقرب ورشة تغيير زيت سيارات",
+            query: "ورشة تغيير زيت سيارات",
           ),
           NearWorkShopButton(
             title: 'بنزينه',
@@ -50,11 +50,11 @@ class NearWorkShopScreen extends StatelessWidget {
           ),
           NearWorkShopButton(
             title: 'مغسله',
-            query: "اقرب ورشة مركز صيانة سيارات",
+            query: "اقرب مغسلة سيارات",
           ),
           NearWorkShopButton(
             title: 'مركز صيانه',
-            query: "اقرب ورشة مركز صيانة سيارات",
+            query: "مركز صيانة سيارات",
           ),
         ],
       ),
