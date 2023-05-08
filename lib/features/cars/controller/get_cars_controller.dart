@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mechanic/core/enums.dart';
-import 'package:mechanic/core/functions.dart';
+import 'package:mechanic/core/utils/functions.dart';
 import 'package:mechanic/data/data_sources/car_data_source.dart';
 import 'package:mechanic/data/models/car_model/car_model.dart';
 

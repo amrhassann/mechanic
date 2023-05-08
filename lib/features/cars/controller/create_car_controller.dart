@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechanic/core/enums.dart';
-import 'package:mechanic/core/functions.dart';
+import 'package:mechanic/core/utils/functions.dart';
 import 'package:mechanic/data/data_sources/car_data_source.dart';
 import 'package:mechanic/data/models/car_model/car_model.dart';
 import 'package:mechanic/features/cars/controller/get_cars_controller.dart';
@@ -32,6 +32,7 @@ class CreateCarController extends GetxController {
         checkKilometers: newCheckKilometersController.text.trim(),
         note: newNoteController.text.trim(),
         id: DateTime.now().millisecondsSinceEpoch.toString(),
+        newKilometersDate: getTodayDate(),
       );
 
       changeLoadingValue();

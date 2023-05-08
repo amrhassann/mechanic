@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/core/enums.dart';
-import 'package:mechanic/core/functions.dart';
+import 'package:mechanic/core/utils/functions.dart';
 import 'package:mechanic/data/data_sources/auth_remote_data_source.dart';
 import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';

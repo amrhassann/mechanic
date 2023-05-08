@@ -6,11 +6,13 @@ import 'package:mechanic/core/theme/theme.dart';
 import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/features/auth/view/login_screen.dart';
 import 'package:mechanic/features/home/home_screen.dart';
-
+import 'package:intl/date_symbol_data_local.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('ar_EG', null);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

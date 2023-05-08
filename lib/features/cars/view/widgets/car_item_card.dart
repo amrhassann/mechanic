@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic/core/functions.dart';
+import 'package:mechanic/core/utils/functions.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
+import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/data/models/car_model/car_model.dart';
-import 'package:mechanic/features/cars/view/widgets/refresh_car_dialog.dart';
+import 'package:mechanic/features/cars/view/widgets/change_car_kilometers_dialog.dart';
+import 'package:mechanic/features/cars/view/widgets/change_check_car_kilometers.dart';
+import 'package:mechanic/features/cars/view/widgets/change_oil_kilometers.dart';
 import 'package:mechanic/widgets/meter_widget.dart';
 
 class CarItemCard extends StatelessWidget {
@@ -31,7 +34,7 @@ class CarItemCard extends StatelessWidget {
               Expanded(
                 child: IconButton(
                   onPressed: () {
-                    refreshCarDataDialog(context, car);
+                    changeCarKilometersDialog(context, car);
                   },
                   icon: const Icon(
                     Icons.refresh,
@@ -50,10 +53,22 @@ class CarItemCard extends StatelessWidget {
               ),
             ],
           ),
-          Text(
-            "اخر قراءة للعداد ${car.kilometers} كـم",
-            style: const TextStyle(color: Colors.grey),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                "اخر قراءة للعداد ${formatNumberWithSeparator(car.kilometers)} كـم",
+                style: const TextStyle(color: Colors.grey),
+              ),
+              Text(
+                getTimeSince(car.newKilometersDate!),
+                style: const TextStyle(color: Colors.grey),
+              ),
+            ],
           ),
+
+
           const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,15 +77,20 @@ class CarItemCard extends StatelessWidget {
                 children: [
                   const Text('غيار الزيت'),
                   const SizedBox(height: 5),
-                  MeterWidget(
-                    size: 100,
-                    currentValue: int.parse(car.oilKilometers),
-                    maxValue: 10000,
-                    minValue: 1,
-                    warningValue: 1000,
-                    warningColor: Colors.green,
-                    meterColor: Colors.redAccent,
-                    displayText: 'كـم',
+                  InkWell(
+                    onTap: (){
+                      changeOilDialog(context,car);
+                    },
+                    child: MeterWidget(
+                      size: 100,
+                      currentValue: int.parse(car.oilKilometers),
+                      maxValue: int.parse(car.maxOilKM!),
+                      minValue: 1,
+                      warningValue: getWarningValue(car.maxOilKM!),
+                      warningColor: Colors.green,
+                      meterColor: Colors.redAccent,
+                      displayText: 'كـم',
+                    ),
                   ),
                   Text(
                     car.oilKilometers,
@@ -81,15 +101,20 @@ class CarItemCard extends StatelessWidget {
               Column(
                 children: [
                   const Text('الصيانه الدوريه'),
-                  MeterWidget(
-                    size: 100,
-                    currentValue: int.parse(car.checkKilometers),
-                    maxValue: 60000,
-                    minValue: 1,
-                    warningValue: 10000,
-                    warningColor: Colors.green,
-                    meterColor: Colors.redAccent,
-                    displayText: 'كـم',
+                  InkWell(
+                    onTap: (){
+                      changeCheckDialog(context,car);
+                    },
+                    child: MeterWidget(
+                      size: 100,
+                      currentValue: int.parse(car.checkKilometers),
+                      maxValue: int.parse(car.maxCheckKM!),
+                      minValue: 1,
+                      warningValue: getWarningValue(car.maxCheckKM!),
+                      warningColor: Colors.green,
+                      meterColor: Colors.redAccent,
+                      displayText: 'كـم',
+                    ),
                   ),
                   Text(
                     car.checkKilometers,

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mechanic/core/manager/colors_manager.dart';
 import 'package:mechanic/data/models/car_model/car_model.dart';
 import 'package:mechanic/features/cars/controller/get_cars_controller.dart';
 import 'package:mechanic/features/cars/controller/refresh_car_controller.dart';
 import 'package:mechanic/widgets/loading/button_loading.dart';
 import 'package:mechanic/widgets/text_field.dart';
 
-refreshCarDataDialog(BuildContext context, CarModel car) {
+changeCheckDialog(BuildContext context, CarModel car) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -17,11 +18,23 @@ refreshCarDataDialog(BuildContext context, CarModel car) {
   );
 }
 
-class _DialogContent extends StatelessWidget {
-  _DialogContent({Key? key, required this.car}) : super(key: key);
+class _DialogContent extends StatefulWidget {
+  const _DialogContent({Key? key, required this.car}) : super(key: key);
 
   final CarModel car;
-  final TextEditingController newKilometersController = TextEditingController();
+
+  @override
+  State<_DialogContent> createState() => _DialogContentState();
+}
+
+class _DialogContentState extends State<_DialogContent> {
+  late TextEditingController textEditingController;
+
+  @override
+  void initState() {
+    textEditingController = TextEditingController(text: widget.car.maxCheckKM);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +48,23 @@ class _DialogContent extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            const Text(
+              "الصيانة الدورية الان",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: ColorsManager.primary,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(height: 10),
             CustomTextFormField(
               keyboardType: TextInputType.number,
               autoFocus: true,
-              controller: newKilometersController,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 10,vertical: 0),
-              label: 'الكيلومترات الحاليه في العداد',
+              controller: textEditingController,
+              contentPadding:
+              const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              label: 'كيلومترات الصيانة',
             ),
             const SizedBox(height: 16.0),
             GetBuilder<RefreshCarController>(
@@ -52,13 +76,13 @@ class _DialogContent extends StatelessWidget {
                   return ElevatedButton(
                     onPressed: () {
                       controller
-                          .refreshCar(car, newKilometersController.text)
+                          .changeCheck(widget.car, textEditingController.text)
                           .then((value) {
                         Get.back();
                         Get.find<GetCarsController>().getCars();
                       });
                     },
-                    child: const Text('تحديث'),
+                    child: const Text('تم'),
                   );
                 }
               },
