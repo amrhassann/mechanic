@@ -7,6 +7,7 @@ import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/features/auth/view/login_screen.dart';
 import 'package:mechanic/features/home/home_screen.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:mechanic/features/on_boarding/view/on_boarding_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -36,9 +37,13 @@ class MyApp extends StatelessWidget {
 }
 
 Widget controlView() {
-  if (HiveHelper.getUserToken() == null) {
-    return LoginScreen();
+  if (HiveHelper.isBoardingSeen() == null) {
+    return OnBoardingView();
   } else {
-    return const HomeScreen();
+    if (HiveHelper.getUserToken() == null) {
+      return LoginScreen();
+    } else {
+      return const HomeScreen();
+    }
   }
 }

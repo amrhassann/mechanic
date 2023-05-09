@@ -6,3 +6,4 @@ Transition kTransition1 = Transition.fadeIn;
 Transition kTransition2 = Transition.rightToLeftWithFade;
 const kCarStatusHiveBox = 'car_status';
 const kUserTokenHiveBox = 'user_token';
+const kBoardingHiveBox = 'boarding_seen';

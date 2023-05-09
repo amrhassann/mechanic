@@ -29,6 +29,8 @@ dependencies:
   cloud_firestore: ^4.6.0
   carousel_slider: ^4.2.1
   intl: ^0.17.0
+  intro_screen_onboarding_flutter: ^1.0.0
+  icons_launcher: ^2.1.0
 
 dev_dependencies:
   flutter_test:

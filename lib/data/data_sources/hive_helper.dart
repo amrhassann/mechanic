@@ -11,7 +11,24 @@ class HiveHelper {
     Hive.registerAdapter(UserModelAdapter());
     await Hive.openBox(kCarStatusHiveBox);
     await Hive.openBox(kUserTokenHiveBox);
+    await Hive.openBox(kBoardingHiveBox);
   }
+
+
+  static boardingSeen(){
+    final box = Hive.box(kBoardingHiveBox);
+    box.put(
+      kBoardingHiveBox,
+      true,
+    );
+  }
+
+  static bool? isBoardingSeen(){
+    final box = Hive.box(kBoardingHiveBox);
+    final value = box.get(kBoardingHiveBox);
+    return value;
+  }
+
 
   /// [hiveSaveUser]
   static hiveSaveUser(UserModel user) {
