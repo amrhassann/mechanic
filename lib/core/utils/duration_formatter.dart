@@ -6,33 +6,29 @@ class DurationFormatter {
 
     if (years > 0) {
       if (years == 1) {
-        return 'سنة';
+        return 'منذ سنة';
       } else if (years == 2) {
-        return "سنتين";
+        return "منذ سنتين";
       } else {
-        return '$years سنين';
+        return 'منذ $years سنوات';
       }
     } else if (months > 0) {
       if (months == 1) {
-        return 'شهر';
+        return 'منذ شهر';
       } else if (months == 2) {
-        return "شهرين";
+        return "منذ شهرين";
       } else {
-        return '$months شهور';
+        return 'منذ $months أشهر';
       }
     } else if (days > 0) {
       if (days == 1) {
-        return 'يوم';
+        return 'منذ يوم';
       } else if (days == 2) {
-        return 'يومين';
-      } else if (days < 11) {
-        return '$days أيام';
-      } else if (days < 20) {
-        return '${days % 10} عشر أيام';
-      } else if (days < 30) {
-        return '${days % 20} عشرين يوم';
-      } else {
-        return '${days / 30} شهر';
+        return 'منذ يومين';
+      } else if(days >=11){
+        return 'منذ $days يوم';
+      }else {
+        return 'منذ $days أيام';
       }
     } else {
       return 'اليوم';
