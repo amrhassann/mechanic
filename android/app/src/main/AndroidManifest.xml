@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mechanic">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
    <application
-        android:label="mechanic"
+        android:label="الحقني"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -30,5 +34,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-    </application>
+
+
+   </application>
 </manifest>

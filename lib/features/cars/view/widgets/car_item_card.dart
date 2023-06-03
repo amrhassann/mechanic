@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic/core/utils/functions.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
-import 'package:mechanic/data/data_sources/hive_helper.dart';
+import 'package:mechanic/core/utils/notification_helper.dart';
 import 'package:mechanic/data/models/car_model/car_model.dart';
 import 'package:mechanic/features/cars/view/widgets/change_car_kilometers_dialog.dart';
 import 'package:mechanic/features/cars/view/widgets/change_check_car_kilometers.dart';
@@ -82,6 +82,11 @@ class CarItemCard extends StatelessWidget {
                       changeOilDialog(context,car);
                     },
                     child: MeterWidget(
+                      onInit: (){
+                        if(int.parse(car.oilKilometers) > getWarningValue(car.maxOilKM!)){
+                          NotificationHelper.showOilNotification(car);
+                        }
+                      },
                       size: 100,
                       currentValue: int.parse(car.oilKilometers),
                       maxValue: int.parse(car.maxOilKM!),
@@ -106,6 +111,11 @@ class CarItemCard extends StatelessWidget {
                       changeCheckDialog(context,car);
                     },
                     child: MeterWidget(
+                      onInit: (){
+                        if(int.parse(car.checkKilometers) > getWarningValue(car.maxCheckKM!)){
+                          NotificationHelper.showCheckNotification(car);
+                        }
+                      },
                       size: 100,
                       currentValue: int.parse(car.checkKilometers),
                       maxValue: int.parse(car.maxCheckKM!),

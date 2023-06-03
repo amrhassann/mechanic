@@ -15,7 +15,9 @@ class MeterWidget extends StatefulWidget {
         this.kimColor = Colors.white,
         this.displayNumericStyle,
         this.displayText = '',
-        this.displayTextStyle});
+        this.displayTextStyle,
+  this.onInit,
+  });
   final double size;
   final int minValue;
   final int maxValue;
@@ -28,12 +30,21 @@ class MeterWidget extends StatefulWidget {
   final TextStyle? displayNumericStyle;
   final String displayText;
   final TextStyle? displayTextStyle;
+  final Function()? onInit;
 
   @override
   MeterWidgetState createState() => MeterWidgetState();
 }
 
 class MeterWidgetState extends State<MeterWidget> {
+  @override
+  void initState() {
+    if(widget.onInit!=null){
+      widget.onInit!();
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double size = widget.size;

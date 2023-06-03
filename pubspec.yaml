@@ -31,20 +31,28 @@ dependencies:
   intl: ^0.17.0
   intro_screen_onboarding_flutter: ^1.0.0
   icons_launcher: ^2.1.0
+  awesome_notifications: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 
+
+
   hive_generator: ^2.0.0
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
 
+icons_launcher:
+  image_path: "assets/images/app_icon.png"
+  platforms:
+     android:
+       enable: true
+       image_path: "assets/images/app_icon.png"
+
 
 flutter:
-
-
   uses-material-design: true
 
   assets:

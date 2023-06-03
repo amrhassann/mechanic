@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechanic/core/bindings.dart';
 import 'package:mechanic/core/theme/theme.dart';
+import 'package:mechanic/core/utils/notification_helper.dart';
 import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/features/auth/view/login_screen.dart';
 import 'package:mechanic/features/home/home_screen.dart';

@@ -2,17 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechanic/core/constants.dart';
 import 'package:mechanic/core/manager/colors_manager.dart';
+import 'package:mechanic/core/utils/notification_helper.dart';
 import 'package:mechanic/data/data_sources/hive_helper.dart';
 import 'package:mechanic/data/models/user_model/user_model.dart';
 import 'package:mechanic/features/cars/view/create_car_screen.dart';
 import 'package:mechanic/features/cars/view/widgets/cars_list.dart';
 import 'package:mechanic/features/home/widgets/drawer.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   UserModel user() => HiveHelper.hiveGetUserModelFromLocal();
 
+  @override
+  void initState() {
+    NotificationHelper.initialize(context);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

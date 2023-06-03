@@ -4,6 +4,9 @@ import 'package:mechanic/features/emergency/emergency_number_card.dart';
 
 class EmergencyNumbersScreen extends StatelessWidget {
   final List<Map<String, dynamic>> emergencyNumbers = [
+    {'name': 'الدولية لانقاذ السيارات', 'number': '01025352345'},
+    {'name': 'كايرو لانقاذ السيارات', 'number': '01005821168'},
+    {'name': 'ونش انقاذ الحرفيين', 'number': '01090314671'},
     {'name': 'الشرطة', 'number': '122'},
     {'name': 'الإسعاف', 'number': '123'},
     {'name': 'الدفاع المدني', 'number': '180'},
